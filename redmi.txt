@@ -1,0 +1,38 @@
+El juego funciona recolectando todos los coleccionables y yendo a la meta cuando se abra el portal.
+
+CONTROLES:
+
+Moverse = WASD
+Salto = barra espaciadora
+Doble salto = doble barra espaciadora
+Correr = Shift
+Dash = doble W (solo con el poder DASH activo)
+Volar = barra espaciadora para subir y Ctrl izquierdo para bajar (solo con el poder VUELO activo)
+
+COLECCIONABLES:
+
+Coleccionable 1: Otorga 1 punto al jugador y suma puntos de estilo al combo.
+Coleccionable 2: Otorga 1 punto al jugador, suma más puntos de estilo al combo y activa una ruleta de poderes que te da un poder aleatorio.
+
+RULETA DE PODERES:
+Al recoger un Coleccionable 2 aparece una ruleta que gira y se detiene en un poder. Al terminar muestra qué te tocó, qué hace y cuánto dura.
+
+IMPULSO: buffeo de sprint, velocidad x1.5 durante 5 segundos. Muestra un indicador con barra de tiempo en la parte superior.
+VUELO: puedes volar libremente durante 6 segundos, sin gravedad.
+VIDA EXTRA: si caes al vacío o tocas una zona mortal, te teletransporta al último suelo que pisaste en vez de reiniciar el juego. Dura hasta que la uses.
+DASH: durante 15 segundos, pulsar W dos veces rápido te lanza hacia adelante.
+
+Los poderes activos aparecen abajo a la izquierda con su tiempo restante.
+
+SISTEMA DE COMBO:
+Cada coleccionable sube tu medidor de estilo y aparece un rango en la esquina derecha, con su nombre y una barra de progreso al siguiente rango:
+
+D (Dismal) → C (Crazy) → B (Badass) → A (Apocalyptic) → S (Savage) → SS (Sick Style) → SSS (Smokin’ Sexy Style!)
+
+Si pasas un rato sin recoger nada, el estilo baja, y baja más rápido cuanto mayor sea el rango. El contador “COMBO xN” cuenta los coleccionables seguidos.
+
+OBJETIVOS Y MAPA:
+
+Portal de teletransporte: aparece al reunir 5 coleccionables y te lleva a otra zona del mapa, con una pantalla de “CARGANDO”.
+Zonas mortales: tocarlas reinicia el juego, a menos que tengas la vida extra.
+Meta: se activa al recolectar todos los coleccionables. Al llegar aparece la pantalla “¡GANASTE!” con tus monedas totales y una cuenta regresiva de 5 segundos antes de reiniciar el juego.
