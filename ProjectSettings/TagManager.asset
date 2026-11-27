@@ -10,6 +10,9 @@ TagManager:
   - win
   - kill
   - tp
+  - vacio
+  - checkpoint
+  - pizo2
   layers:
   - Default
   - TransparentFX

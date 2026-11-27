@@ -58,6 +58,9 @@ public class PersonajeRoblox : MonoBehaviour
     public LayerMask capasSuelo = ~0;
     public float margenSuelo = 0.15f;
 
+    // Rotación extra que le pone el script "movimiento" al modelo durante un emote (identidad = nada)
+    [HideInInspector] public Quaternion rotacionEmote = Quaternion.identity;
+
     // ---- rig ----
     Rigidbody rb;
     Collider col;
@@ -535,7 +538,7 @@ public class PersonajeRoblox : MonoBehaviour
                                  suave ? 1f - Mathf.Exp(-(picando ? 20f : 10f) * dt) : 0.65f);
         desliz = Mathf.Lerp(desliz, (picando && deslizando) ? 1f : 0f,
                             suave ? 1f - Mathf.Exp(-16f * dt) : 0.7f);
-        raiz.rotation = yaw * Quaternion.Euler(inclinacion, 0f, 0f);
+        raiz.rotation = yaw * Quaternion.Euler(inclinacion, 0f, 0f) * rotacionEmote;
 
         // ---------- Polvo ----------
         if (polvo)
@@ -552,6 +555,9 @@ public class PersonajeRoblox : MonoBehaviour
     void LateUpdate()
     {
         if (raiz == null) return;
+
+        // El emote (si hay uno) se aplica CADA frame, no solo en los cuadros de stop motion
+        raiz.rotation = yaw * Quaternion.Euler(inclinacion, 0f, 0f) * rotacionEmote;
 
         // El modelo sigue al Jugador pero NO hereda su rotación (la esfera puede rodar)
         float radioPies = col != null ? col.bounds.extents.y : 0.5f;
